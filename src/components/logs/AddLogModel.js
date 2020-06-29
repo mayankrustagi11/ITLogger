@@ -16,7 +16,6 @@ const AddLogModel = ({ addLog }) => {
     } else {
       const newLog = { message, attention, tech, date: new Date() };
       addLog(newLog);
-
       M.toast({ html: `Log added by ${tech}` });
 
       // Clear Fields

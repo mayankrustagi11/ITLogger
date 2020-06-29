@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addTech } from '../../actions/techActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
 
-const AddTechModel = () => {
+const AddTechModel = ({ addTech }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 
@@ -9,11 +12,14 @@ const AddTechModel = () => {
     if (firstName === '' || lastName === '') {
       M.toast({ html: 'Please enter the First Name and Last Name' });
     } else {
-    }
+      const newTech = { firstName, lastName };
+      addTech(newTech);
+      M.toast({ html: `${firstName} ${lastName} was added as a Technician` });
 
-    // Clear Fields
-    setFirstName('');
-    setLastName('');
+      // Clear Fields
+      setFirstName('');
+      setLastName('');
+    }
   };
 
   return (
@@ -62,4 +68,8 @@ const AddTechModel = () => {
   );
 };
 
-export default AddTechModel;
+AddTechModel.propTypes = {
+  addTech: PropTypes.func.isRequired,
+};
+
+export default connect(null, { addTech })(AddTechModel);
