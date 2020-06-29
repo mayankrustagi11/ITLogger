@@ -1,25 +1,18 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed hard drive on workstation 005",
-      "attention": false,
-      "data": "03-02-2019",
-      "tech": "Sam Smith"
-    },
-    {
-      "id": 2,
-      "message": "Workstation 007 not posting",
+      "message": "Changed network card in Server 007",
       "attention": true,
-      "data": "03-02-2019",
-      "tech": "John Doe"
+      "tech": "Sam Smith",
+      "date": "2020-06-29T10:16:15.604Z",
+      "id": 1
     },
     {
-      "id": 3,
-      "message": "Changed memory on workstation 050",
+      "message": "Hard drive failed in system 112",
       "attention": false,
-      "data": "03-02-2019",
-      "tech": "Sara Wilson"
+      "tech": "Sara Wilson",
+      "date": "2020-06-29T10:16:41.476Z",
+      "id": 2
     }
   ],
   "techs": [
